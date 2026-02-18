@@ -25,4 +25,6 @@ resources: {}
 
 autossl: {}
 
-# No Istio-related configuration present, no changes needed
+# Istio Configuration
+istio:
+  enabled: true

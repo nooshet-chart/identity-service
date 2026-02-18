@@ -1,1 +1,11 @@
-# Istio PeerAuthentication removed as identity-service will not use Istio
+apiVersion: security.istio.io/v1beta1
+kind: PeerAuthentication
+metadata:
+  name: {{ include "identity-service.fullname" . }}-peer-auth
+  namespace: {{ .Release.Namespace }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "identity-service.selectorLabels" . | nindent 6 }}
+  mtls:
+    mode: STRICT

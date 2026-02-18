@@ -1,16 +1,13 @@
 # Default values for the Identity Service Helm chart
 
 replicaCount: 1
-
 image:
   repository: ghcr.io/nooshet-backend/identity-service
-  tag: latest
+  tag: development-bb09a4e
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 80
-
 ingress:
   enabled: true
   annotations: {}
@@ -20,11 +17,8 @@ ingress:
         - path: /
           pathType: ImplementationSpecific
   tls: []
-
 resources: {}
-
 autossl: {}
-
 # Istio Configuration
 istio:
   enabled: true

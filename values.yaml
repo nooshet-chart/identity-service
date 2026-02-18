@@ -26,3 +26,12 @@ istio:
   enabled: true
 env:
   application.config.user-service-url: "http://user-service:80"
+database:
+  host: postgresql-identity
+  port: 5432
+  name: nooshet_identity
+  user: nooshet_identity
+  password: identity_password_123
+redis:
+  host: redis
+  port: 6379

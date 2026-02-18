@@ -31,6 +31,14 @@ autossl: {}
 istio:
   enabled: true
 env:
+  JWT_SECRET: "change-me-in-prod"
+  JWT_ISSUER: "nooshet"
+  SPRING_PROFILES_ACTIVE: "dev"
+  REDIS_HOST: "redis"
+  REDIS_PORT: "6379"
+  REDIS_TIMEOUT: "2000ms"
+  USER_SERVICE_URL: "http://user-service:8080"
+  JAVA_OPTS: "-XX:TieredStopAtLevel=1 -Xss256k -Xmx448m"
   application.config.user-service-url: "http://user-service:80"
 database:
   host: postgresql-identity

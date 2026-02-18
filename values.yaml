@@ -3,7 +3,7 @@
 replicaCount: 1
 
 image:
-  repository: nooshet/identity-service
+  repository: ghcr.io/nooshet-backend/identity-service
   tag: latest
   pullPolicy: IfNotPresent
 

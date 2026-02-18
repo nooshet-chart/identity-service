@@ -24,3 +24,5 @@ ingress:
 resources: {}
 
 autossl: {}
+
+# No Istio-related configuration present, no changes needed

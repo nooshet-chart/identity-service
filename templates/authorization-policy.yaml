@@ -1,14 +1,1 @@
-apiVersion: security.istio.io/v1beta1
-kind: AuthorizationPolicy
-metadata:
-  name: {{ include "identity-service.fullname" . }}-authz
-spec:
-  selector:
-    matchLabels:
-      {{- include "identity-service.selectorLabels" . | nindent 6 }}
-  action: ALLOW
-  rules:
-    - from:
-        - source:
-            principals: {{ toYaml .Values.istio.authorization.internalCallers }}
-
+# Istio AuthorizationPolicy removed as identity-service will not use Istio

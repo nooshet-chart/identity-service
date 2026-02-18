@@ -24,3 +24,5 @@ autossl: {}
 # Istio Configuration
 istio:
   enabled: true
+env:
+  application.config.user-service-url: "http://user-service:80"

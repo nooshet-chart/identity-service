@@ -40,6 +40,8 @@ env:
   USER_SERVICE_URL: "http://user-service:8080"
   JAVA_OPTS: "-XX:TieredStopAtLevel=1 -Xss256k -Xmx448m"
   application.config.user-service-url: "http://user-service:80"
+  MAIL_USERNAME: "nooshet.2025@gmail.com"
+  MAIL_PASSWORD: "loza derr hxoa ruuj"
 database:
   host: postgresql-identity
   port: 5432

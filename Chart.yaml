@@ -1,0 +1,28 @@
+apiVersion: v2
+name: identity-service
+description: A Helm chart for the Nooshet identity-service
+type: application
+version: 1.0.0
+appVersion: "1.0.0"
+
+dependencies:
+  - name: common
+    repository: https://nooshet.github.io/charts
+    version: 1.0.0
+
+maintainers:
+  - name: Nooshet
+    email: contact@nooshet.com
+
+sources:
+  - https://github.com/Nooshet/identity-service
+
+keywords:
+  - identity
+  - service
+  - nooshet
+
+annotations:
+  category: "Nooshet"
+  helm.sh/release-namespace: "nooshet"
+  helm.sh/chart: "identity-service-1.0.0"

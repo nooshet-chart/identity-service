@@ -30,6 +30,10 @@ autossl: {}
 # Istio Configuration
 istio:
   enabled: true
+  # Optional authorization settings. `internalCallers` is a list of principals
+  # allowed to call this service (used by AuthorizationPolicy). Keep empty by default.
+  authorization:
+    internalCallers: []
 env:
   JWT_SECRET: "change-me-in-prod-please-use-a-longer-secret-key-123456"
   JWT_ISSUER: "nooshet"

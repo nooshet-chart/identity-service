@@ -1,7 +1,7 @@
 apiVersion: security.istio.io/v1beta1
 kind: AuthorizationPolicy
 metadata:
-  name: {{ include "identity-service.fullname" . }}-authz
+  name: '{{ printf "%s-authz" (include "identity-service.fullname" .) }}'
 spec:
   selector:
     matchLabels:
@@ -10,4 +10,4 @@ spec:
   rules:
     - from:
         - source:
-            principals: {{ toYaml (default (list) .Values.istio.authorization.internalCallers) | nindent 12 }}
+            principals: {{ toJson (default (list) .Values.istio.authorization.internalCallers) }}

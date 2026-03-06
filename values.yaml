@@ -51,7 +51,11 @@ database:
   port: 5432
   name: nooshet_identity
   user: nooshet_identity
-  password: identity_password_123
+  # Prefer using a Kubernetes Secret to store DB credentials. If you have a Secret,
+  # set `secretName` and `secretKey`. If not set, Helm will fall back to `password`.
+  secretName: postgresql-identity-secret
+  secretKey: postgresql-password
+  # password: identity_password_123
 redis:
   host: "redis"
   port: "6379"

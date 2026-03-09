@@ -54,7 +54,7 @@ env:
       secretKeyRef:
         name: postgresql-identity-secret
         key: postgresql-password
-
+  USER_SERVICE_URL: "http://user-service:8080"
 database:
   host: "postgresql-identity"
   port: 5432

@@ -52,5 +52,7 @@ spec:
               value: {{ .Values.redis.host | quote }}
             - name: SPRING_REDIS_PORT
               value: {{ .Values.redis.port | quote }}
+            - name: APPLICATION_CONFIG_USER_SERVICE_URL
+              value: {{ .Values.env.USER_SERVICE_URL | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}

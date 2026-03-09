@@ -47,7 +47,15 @@ spec:
             - name: DB_USERNAME
               value: {{ .Values.database.user | quote }}
             - name: DB_PASSWORD
-              value: {{ .Values.database.password | quote }}
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-identity-secret
+                  key: postgresql-password
+            - name: SPRING_DATASOURCE_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgresql-identity-secret
+                  key: postgresql-password
             - name: SPRING_REDIS_HOST
               value: {{ .Values.redis.host | quote }}
             - name: SPRING_REDIS_PORT

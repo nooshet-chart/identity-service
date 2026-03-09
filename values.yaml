@@ -43,19 +43,26 @@ env:
   REDIS_TIMEOUT: "2000ms"
   USER_SERVICE_URL: "http://user-service:8080"
   JAVA_OPTS: "-XX:TieredStopAtLevel=1 -Xss256k -Xmx448m"
-  application.config.user-service-url: "http://user-service:80"
   MAIL_USERNAME: "nooshet.2025@gmail.com"
   MAIL_PASSWORD: "loza derr hxoa ruuj"
+  
+  # PostgreSQL connection environment variables
+  SPRING_DATASOURCE_URL: "jdbc:postgresql://postgresql-identity:5432/nooshet_identity"
+  SPRING_DATASOURCE_USERNAME: "nooshet_identity"
+  SPRING_DATASOURCE_PASSWORD: 
+    valueFrom:
+      secretKeyRef:
+        name: postgresql-identity-secret
+        key: postgresql-password
+
 database:
-  host: postgresql-identity
+  host: "postgresql-identity"
   port: 5432
-  name: nooshet_identity
-  user: nooshet_identity
-  # Prefer using a Kubernetes Secret to store DB credentials. If you have a Secret,
-  # set `secretName` and `secretKey`. If not set, Helm will fall back to `password`.
-  secretName: postgresql-identity-secret
-  secretKey: postgresql-password
-  # password: identity_password_123
+  name: "nooshet_identity"
+  user: "nooshet_identity"
+  secretName: "postgresql-identity-secret"
+  secretKey: "postgresql-password"
+
 redis:
   host: "redis"
   port: "6379"

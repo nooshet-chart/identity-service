@@ -34,8 +34,10 @@ spec:
           env:
             {{- if .Values.env }}
             {{- range $key, $value := .Values.env }}
+            {{- if ne $key "SPRING_DATASOURCE_PASSWORD" }}
             - name: {{ $key }}
               value: {{ $value | quote }}
+            {{- end }}
             {{- end }}
             {{- end }}
             - name: DB_HOST
